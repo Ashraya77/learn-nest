@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Query,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { Prisma } from '@prisma/client';
 
@@ -12,7 +21,7 @@ export class UsersController {
   }
 
   @Get()
-  findAll(@Query('role') role?:'intern'|'admin') {
+  findAll(@Query('role') role?: 'intern' | 'admin') {
     return this.usersService.findAll(role);
   }
 
@@ -22,7 +31,10 @@ export class UsersController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: Prisma.UserUpdateInput) {
+  update(
+    @Param('id') id: string,
+    @Body() updateUserDto: Prisma.UserUpdateInput,
+  ) {
     return this.usersService.update(+id, updateUserDto);
   }
 

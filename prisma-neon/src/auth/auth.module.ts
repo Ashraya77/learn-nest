@@ -6,6 +6,6 @@ import { StudentModule } from 'src/student/student.module';
 @Module({
   imports: [StudentModule],
   providers: [AuthService],
-  controllers: [AuthController]
+  controllers: [AuthController],
 })
 export class AuthModule {}

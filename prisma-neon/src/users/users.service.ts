@@ -20,7 +20,7 @@ export class UsersService {
     })
     return this.databaseService.user.findMany()
   }
-
+                                
   async findOne(id: number) {
     return this.databaseService.user.findUnique({
       where:{
