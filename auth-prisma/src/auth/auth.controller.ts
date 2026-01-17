@@ -14,14 +14,12 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() loginDto: LoginUserDto) {
-    const user = await this.authService.validateUser(
+    const result = await this.authService.validateUser(
       loginDto.email,
       loginDto.password,
     );
-    if (user instanceof UnauthorizedException) {
-      return user;
-    }
-    return this.authService.login(loginDto);
+
+    return this.authService.login(result.user);
   }
 
   @Post('refresh')

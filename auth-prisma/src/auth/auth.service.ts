@@ -93,7 +93,7 @@ export class AuthService {
 
   findUserById(id: string){
     return this.prisma.user.findUnique({
-      where: { id },
+      where: { id: id },
     });
   }
 }
