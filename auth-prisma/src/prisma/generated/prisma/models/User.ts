@@ -254,7 +254,7 @@ export type UserCreateInput = {
   email: string
   name: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -264,7 +264,7 @@ export type UserUncheckedCreateInput = {
   email: string
   name: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -294,7 +294,7 @@ export type UserCreateManyInput = {
   email: string
   name: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
 }
